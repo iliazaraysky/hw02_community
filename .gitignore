@@ -17,6 +17,3 @@ __pycache__/
 
 static/
 posts/static/
-posts/migrations/
-
-db.sqlite3
