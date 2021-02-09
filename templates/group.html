@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Записи сообщества Лeв Толстой | Yatube</title>
+    {% for post in posts %}
+    <title>Записи сообщества {{ post.group.title }} | Yatube</title>
 </head>
 <body>
-    {% for post in posts %}
-        <h1>Лeв Толстой</h1>
+        <h1>{{ post.group.title }}</h1>
             <p>
                 {{ post.group.description }}
             </p>
             <h3>
-                Автор: {{ post.author.get_full_name }}, дата публикации: {{ post.pub_date }}
+                Автор: {{ post.author.get_full_name }}, дата публикации: {{ post.pub_date|date:"d M Y" }}
             </h3>
-        <p></p>
+        <p>{{ post.text }}</p>
         <hr>
     {% endfor %}
 </body>
