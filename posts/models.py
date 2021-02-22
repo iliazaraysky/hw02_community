@@ -20,3 +20,6 @@ class Post(models.Model):
                                related_name="posts")
     group = models.ForeignKey(Group, on_delete=models.DO_NOTHING, blank=True,
                               null=True)
+
+    def __str__(self):
+        return self.text
