@@ -1,5 +1,11 @@
 from django.shortcuts import render, get_object_or_404
+import datetime as dt
 from .models import Post, Group
+
+
+def year(request):
+    now_year = dt.datetime.now().year
+    return {'year': now_year}
 
 
 def index(request):
